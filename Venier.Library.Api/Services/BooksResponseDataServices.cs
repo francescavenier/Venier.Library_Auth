@@ -8,7 +8,7 @@ using Venier.Library.Api.Models;
 
 namespace Venier.Library.Api.Services
 {
-    public class BooksResponseDataServices
+    public class BooksResponseDataServices : IBooksResponseDataServices
     {
         public async Task<IEnumerable<Doc>> GetResponse(string text)
         {
