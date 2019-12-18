@@ -12,8 +12,8 @@
     <a asp-page="Books/Details" asp-route-id="@book.Id"> Vai al libro</a>
     @if (User.Identity.IsAuthenticated)
     {
-        <button type="submit" asp-page="Books/Delete" asp-route-id="@book.Id" class="btn btn-dark">Elimina</button>
-        <button type="submit" asp-page="Books/Edit" asp-route-id="@book.Id"class="btn btn-dark">Modifica</button>     
+        <a asp-page="Books/Delete" asp-route-id="@book.Id">Elimina</a>
+        <a asp-page="Books/Edit" asp-route-id="@book.Id">Modifica</a>     
     }
     <hr />
 }
