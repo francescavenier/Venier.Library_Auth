@@ -10,10 +10,15 @@
     <h5><i> @book.Author</i> </h5>
     <p>@book.Description</p>
     <a asp-page="Books/Details" asp-route-id="@book.Id"> Vai al libro</a>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <button type="submit" asp-page="Books/Delete" asp-route-id="@book.Id" class="btn btn-dark">Elimina</button>
+        <button type="submit" asp-page="Books/Edit" asp-route-id="@book.Id"class="btn btn-dark">Modifica</button>     
+    }
     <hr />
 }
 @*
-    TODO: 
+    TODO:
     - grafica
     - autenticazione
     - inserimento
