@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Venier.Library.Web", "Venier.Library.Web\Venier.Library.Web.csproj", "{0A3E0D9E-6EB5-492C-929E-D28BCD4C05BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A3E0D9E-6EB5-492C-929E-D28BCD4C05BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3E0D9E-6EB5-492C-929E-D28BCD4C05BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A3E0D9E-6EB5-492C-929E-D28BCD4C05BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A3E0D9E-6EB5-492C-929E-D28BCD4C05BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8DACC41-6CE0-41F4-8E48-CB86ADE386C0}
+	EndGlobalSection
+EndGlobal
