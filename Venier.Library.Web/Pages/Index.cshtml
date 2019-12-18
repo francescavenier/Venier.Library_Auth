@@ -4,7 +4,22 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@foreach (var book in Model.Books)
+{
+    <h2>@book.Title</h2>
+    <h5><i> @book.Author</i> </h5>
+    <p>@book.Description</p>
+    <a asp-page="Books/Details" asp-route-id="@book.Id"> Vai al libro</a>
+    <hr />
+}
+@*
+    TODO: 
+    - grafica
+    - autenticazione
+    - inserimento
+    - gestione lettura (letto-sto leggendo)
+    - gestione valutazioni (stelline)
+    - upload file (salvare la copertina di un libro)
+    - api rest per funzionalità client (integrazione javascript)
+    - cloud con Azure -> sviluppo e pubblicazione
+*@

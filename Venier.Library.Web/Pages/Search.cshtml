@@ -1,0 +1,35 @@
+﻿@page
+@model Venier.Library.Web.SearchModel
+@{
+    ViewData["Title"] = "Search";
+}
+<form method="post">
+    <div class="form-group">
+        <div class="input-group md-form form-sm form-1 pl-0">
+            <input class="form-control my-0 py-1" placeholder="Title" aria-label="Search" name="testo">
+            <button href="#!" class="btn btn-dark" type="submit">Search</button>
+        </div>
+    </div>
+</form>
+
+<div>
+    @foreach (var b in Model.Books)
+    {
+        var isbn = b.isbn?.FirstOrDefault();
+
+       <div  class="card" style="width: 20rem; height: 10rem; float:left; margin: 10px;">
+           <div class="card-body">
+               <h5 class="card-title">@b.title</h5>
+               <p class="card-text">@b.first_publish_year<br /> ISBN: @isbn</p>
+               <div class="h6 mb-0 font-weight-bold text-gray-800">
+                   <a asp-page="/AddBook" asp-route-isbn="@isbn">Aggiungi</a>
+               </div>
+           </div>
+       </div>
+    }
+</div>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
