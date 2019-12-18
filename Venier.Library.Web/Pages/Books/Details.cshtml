@@ -1,0 +1,27 @@
+﻿@page "{id}"
+@model Venier.Library.Web.Pages.Books.DetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Model.Book.Title</h1>
+<p>@Model.Book.Description</p>
+<h6>Autore: @Model.Book.Author</h6>
+<h6>Data di creazione: @Model.Book.Author</h6>
+
+<!--Aggiungere una tabella in cui è possibile visualizzare lo storico delle letture-->
+<table>
+    <tr>
+        <th>Start </th>
+        <th>End</th>
+        <th>Note</th>
+    </tr>
+    @foreach (var h in Model.History)
+    {
+        <tr>
+            <td>@h.ReadStart</td>
+            <td>@h.ReadEnd</td>
+            <td>@h.Notes</td>
+        </tr>
+    }
+</table>
