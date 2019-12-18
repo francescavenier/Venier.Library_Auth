@@ -12,6 +12,9 @@ using Venier.Library.Web.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Venier.Library.Data.Repositories;
+using Venier.Library.Data;
+using Venier.Library.Api.Services;
 
 namespace Venier.Library.Web
 {
@@ -33,6 +36,12 @@ namespace Venier.Library.Web
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddRazorPages();
+
+            services.AddScoped<IBooksRepository, BooksRepository>();
+            services.AddScoped<IBookReadHistoriesRepository, BookReadHistoriesRepository>();
+            services.AddScoped<IBooksGenresRepository, BooksGenresRepository>();
+
+            services.AddSingleton<IBooksResponseDataServices, BooksResponseDataServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
