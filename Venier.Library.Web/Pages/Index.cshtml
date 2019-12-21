@@ -14,13 +14,13 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="h3 font-weight-bold text-primary text-uppercase mb-1">@b.Titolo</div>
-                                <div class="h6 mb-0 font-weight-bold text-gray-800">@b.Id</div>
-                                <div class="h6 mb-0 font-weight-bold text-gray-800">@b.Autore</div>
-                                <div class="h6 mb-0 font-weight-bold text-gray-800">@b.DataAcquisto</div>
+                                <div class="h3 font-weight-bold text-primary text-uppercase mb-1">@book.Title</div>
+                                <div class="h6 mb-0 font-weight-bold text-gray-800">@book.Id</div>
+                                <div class="h6 mb-0 font-weight-bold text-gray-800">@book.Author</div>
+                                <div class="h6 mb-0 font-weight-bold text-gray-800">@book.Description</div>
                                 <br /><br />
                                 <div class="h6 mb-0 font-weight-bold text-gray-800">
-                                    <a asp-page="/Books/Edit" asp-route-id="@b.Id">Modifica</a>
+                                    <a asp-page="/Books/Edit" asp-route-id="@book.Id">Modifica</a>
                                 </div>
 
                                 <!--
@@ -36,25 +36,6 @@
                     </div>
                 </div>
             </div>
-            <!--
-        <div class="card">
-            <h2>@book.Title</h2>
-            <h5><i> @book.Author</i> </h5>
-            <p>@book.Description</p>
-            <div class="fakebtn">
-                <a asp-page="Books/Details" asp-route-id="@book.Id"> Vai al libro</a>
-            </div>
-            @if (User.Identity.IsAuthenticated)
-            {
-                <div class="fakebtn">
-                    <a asp-page="Books/Delete" asp-route-id="@book.Id">Elimina</a>
-                </div>
-                <div class="fakebtn">
-                    <a asp-page="Books/Edit" asp-route-id="@book.Id">Modifica</a>
-                </div>
-            }
-        </div>
-        -->
         }
     </div>
 
