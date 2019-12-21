@@ -27,15 +27,15 @@
                             -->
                             <br /><br />
                             <div class="fakebtn">
-                                <a asp-page="/Books/Details" asp-route-id="@book.Id">Details</a>
+                                <a style="color:white;" asp-page="/Books/Details" asp-route-id="@book.Id">Details</a>
                             </div>
                             @if (User.Identity.IsAuthenticated)
                             {
                                 <div class="fakebtn">
-                                    <a asp-page="Books/Delete" asp-route-id="@book.Id">Elimina</a>
+                                    <a style="color:white;" asp-page="Books/Delete" asp-route-id="@book.Id">Elimina</a>
                                 </div>
                                 <div class="fakebtn">
-                                    <a asp-page="Books/Edit" asp-route-id="@book.Id">Modifica</a>
+                                    <a style="color:white;" asp-page="Books/Edit" asp-route-id="@book.Id">Modifica</a>
                                 </div>
                             }
 
