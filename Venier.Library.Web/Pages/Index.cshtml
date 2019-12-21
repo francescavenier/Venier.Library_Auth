@@ -6,16 +6,23 @@
 
 @foreach (var book in Model.Books)
 {
-    <h2>@book.Title</h2>
-    <h5><i> @book.Author</i> </h5>
-    <p>@book.Description</p>
-    <a asp-page="Books/Details" asp-route-id="@book.Id"> Vai al libro</a>
-    @if (User.Identity.IsAuthenticated)
-    {
-        <a asp-page="Books/Delete" asp-route-id="@book.Id">Elimina</a>
-        <a asp-page="Books/Edit" asp-route-id="@book.Id">Modifica</a>     
-    }
-    <hr />
+    <div class="card">
+        <h2>@book.Title</h2>
+        <h5><i> @book.Author</i> </h5>
+        <p>@book.Description</p>
+        <div class="fakebtn">
+            <a asp-page="Books/Details" asp-route-id="@book.Id"> Vai al libro</a>
+        </div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="fakebtn">
+                <a asp-page="Books/Delete" asp-route-id="@book.Id">Elimina</a>
+            </div>
+            <div class="fakebtn">
+                <a asp-page="Books/Edit" asp-route-id="@book.Id">Modifica</a>
+            </div>
+        }
+    </div>
 }
 @*
     TODO:
