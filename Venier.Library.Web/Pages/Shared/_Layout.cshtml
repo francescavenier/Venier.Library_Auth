@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 sticky-top">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Venier.Library.Web</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -34,12 +34,23 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <div class="sidenav">
+            <a class="sidebar-brand" asp-page="/Index">
+                <div class="sidebar-icon">
+                <!--img-->
+                </div>
+                <h4>Venier.Library</h4>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <a asp-page="/Search">New book</a>
+            <a asp-page="/Privacy">Privacy</a>
+        </div>
+        <div class="main">
             @RenderBody()
-        </main>
+        </div>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer style="margin-left:15%;" class="border-top footer text-muted">
         <div class="container">
             &copy; 2019 - Venier.Library.Web - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
