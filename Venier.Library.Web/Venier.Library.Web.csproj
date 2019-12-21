@@ -5,6 +5,10 @@
     <UserSecretsId>aspnet-Venier.Library.Web-9AF880C2-659A-4CBC-B031-D464CF316892</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\js\site.js" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.0.0" />
