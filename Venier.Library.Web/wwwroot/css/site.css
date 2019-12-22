@@ -1,26 +1,10 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-.header 
-{
-    width:100%;
-    position:absolute;
-    position:fixed;
-}
-.sidebar-brand
-{
-    text-align:center;
-}
-
-.sidebar-icon {
-    height: 80px;
-    width: 80px;
-}
-
 /* The sidebar menu */
 .sidenav {
     height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 220px; /* Set the width of the sidebar */
+    width: 15%; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
@@ -45,7 +29,7 @@ for details on configuring this project to bundle and minify static web assets. 
 
 /* Style page content */
 .main {
-    margin-left: 220px; /* Same as the width of the sidebar */
+    margin-left: 15%; /* Same as the width of the sidebar */
     padding: 0px 10px;
 }
 
@@ -97,9 +81,9 @@ a {
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    color: #007bff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
 }
 
 /* Sticky footer styles
@@ -141,10 +125,9 @@ body {
   margin-bottom: 60px;
 }
 .footer {
-    margin-left:220px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    white-space: nowrap;
-    line-height: 60px; /* Vertically center the text there */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
 }
