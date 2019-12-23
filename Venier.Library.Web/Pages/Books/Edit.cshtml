@@ -5,41 +5,41 @@
 }
 
 <h1>Edit</h1>
-<form>
+<form method="post">
     <div class="form-row">
         <div class="form-group col-md-6">
             <label>Title</label>
-            <input type="text" class="form-control" placeholder="Title">
+            <input type="text" class="form-control" placeholder="@Model.Book.Title">
         </div>
         <div class="form-group col-md-6">
             <label>Author</label>
-            <input type="text" class="form-control" placeholder="Author">
+            <input type="text" class="form-control" placeholder="@Model.Book.Author">
         </div>
     </div>
     <div class="form-group">
         <label>Description</label>
-        <input type="text" class="form-control" placeholder="Enter here book's description...">
+        <input type="text" class="form-control" placeholder="@Model.Book.Description">
     </div>
         <div class="it-datepicker-wrapper theme-dark">
             <div class="form-group">
                 <label for="date2">Creation date</label>
-                <input class="form-control it-date-datepicker" type="text" placeholder="inserisci la data in formato gg/mm/aaaa">
+                <input class="form-control it-date-datepicker" type="text" placeholder="@Model.Book.CreationDate">
             </div>
         </div>
         <div class="it-datepicker-wrapper theme-dark">
             <div class="form-group">
                 <label for="date2">Published date</label>
-                <input class="form-control it-date-datepicker" type="text" placeholder="inserisci la data in formato gg/mm/aaaa">
+                <input class="form-control it-date-datepicker" type="text" placeholder="@Model.Book.PublishedDate">
             </div>
         </div>
     <div class="form-group">
         <div class="form-check">
             <input class="form-check-input" type="checkbox" id="gridCheck">
             <label class="form-check-label" for="gridCheck">
-                Check me out
+                Check if you have already read it!
             </label>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Sign in</button>
+    <button type="submit" class="btn btn-primary" style="float:right;">Edit</button>
 </form>
 
