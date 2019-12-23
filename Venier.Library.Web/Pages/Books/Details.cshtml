@@ -4,24 +4,40 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>@Model.Book.Title</h1>
-<p>@Model.Book.Description</p>
-<h6>Autore: @Model.Book.Author</h6>
-<h6>Data di creazione: @Model.Book.Author</h6>
+    <div class="card">
+        <div class="card-header">
+            @Model.Book.Title
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <div class="card-info">
+                    <p>@Model.Book.Description</p>
+                    @if (Model.History == null)
+                    {
+                        <!--Aggiungere una tabella in cui è possibile visualizzare lo storico delle letture-->
+                        <table>
+                            <tr>
+                                <th>Start </th>
+                                <th>End</th>
+                                <th>Note</th>
+                            </tr>
+                            @foreach (var h in Model.History)
+                            {
+                                <tr>
+                                    <td>@h.ReadStart</td>
+                                    <td>@h.ReadEnd</td>
+                                    <td>@h.Notes</td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                </div>
+                <div >
+                    <img class="card-image" src="~/img/abierto-blanco-y-negro-libro-novela-821139.jpg" alt="Open book"/>
+                </div>
+                <footer class="blockquote-footer">Autore <cite title="Source Title">@Model.Book.Author</cite></footer>
+            </blockquote>
+        </div>
+    </div>
 
-<!--Aggiungere una tabella in cui è possibile visualizzare lo storico delle letture-->
-<table>
-    <tr>
-        <th>Start </th>
-        <th>End</th>
-        <th>Note</th>
-    </tr>
-    @foreach (var h in Model.History)
-    {
-        <tr>
-            <td>@h.ReadStart</td>
-            <td>@h.ReadEnd</td>
-            <td>@h.Notes</td>
-        </tr>
-    }
-</table>
+

@@ -18,13 +18,6 @@
                             <div class="h6 mb-0 font-weight-bold text-gray-800">@book.Id</div>
                             <div class="h6 mb-0 font-weight-bold text-gray-800">@book.Author</div>
                             <div class="h6 mb-0 font-weight-bold text-gray-800">@book.Description</div>
-                            <!--
-                            QUI POTREI USARE L'ICONA DI UN LIBRO APERTO SE NON è ANCORA CONCLUSO E CHIUSA AL CONTRARIO'
-                                <div class="col-auto">
-                                     <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                </div>
-                                src="~/Images/books-stack-of-three.png"
-                            -->
                             <br /><br />
                             <div class="fakebtn">
                                 <a asp-page="/Books/Details" asp-route-id="@book.Id">Details</a>
@@ -32,11 +25,12 @@
                             @if (User.Identity.IsAuthenticated)
                             {
                                 <div class="fakebtn">
-                                    <a  asp-page="Books/Delete" asp-route-id="@book.Id">Elimina</a>
+                                    <a asp-page="Books/Edit" asp-route-id="@book.Id">Edit</a>
                                 </div>
                                 <div class="fakebtn">
-                                    <a  asp-page="Books/Edit" asp-route-id="@book.Id">Modifica</a>
+                                    <a style="background-color:darkred" asp-page="Books/Delete" asp-route-id="@book.Id">Delete</a>
                                 </div>
+
                             }
 
 
