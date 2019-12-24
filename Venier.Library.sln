@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Venier.Library.Web", "Venier.Library.Web\Venier.Library.Web.csproj", "{0A3E0D9E-6EB5-492C-929E-D28BCD4C05BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Venier.Library.Api", "Venier.Library.Api\Venier.Library.Api.csproj", "{0F1CB58F-0B9B-444B-9642-6E54A406F4A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Venier.Library.Api", "Venier.Library.Api\Venier.Library.Api.csproj", "{0F1CB58F-0B9B-444B-9642-6E54A406F4A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Venier.Library.Data", "Venier.Library.Data\Venier.Library.Data.csproj", "{A2F4D47C-749F-4E51-A92C-FAF01C63B021}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Venier.Library.Data", "Venier.Library.Data\Venier.Library.Data.csproj", "{A2F4D47C-749F-4E51-A92C-FAF01C63B021}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,16 +17,16 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{0A3E0D9E-6EB5-492C-929E-D28BCD4C05BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0A3E0D9E-6EB5-492C-929E-D28BCD4C05BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A3E0D9E-6EB5-492C-929E-D28BCD4C05BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A3E0D9E-6EB5-492C-929E-D28BCD4C05BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A3E0D9E-6EB5-492C-929E-D28BCD4C05BD}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3E0D9E-6EB5-492C-929E-D28BCD4C05BD}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{0F1CB58F-0B9B-444B-9642-6E54A406F4A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0F1CB58F-0B9B-444B-9642-6E54A406F4A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F1CB58F-0B9B-444B-9642-6E54A406F4A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F1CB58F-0B9B-444B-9642-6E54A406F4A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F1CB58F-0B9B-444B-9642-6E54A406F4A8}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F1CB58F-0B9B-444B-9642-6E54A406F4A8}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{A2F4D47C-749F-4E51-A92C-FAF01C63B021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A2F4D47C-749F-4E51-A92C-FAF01C63B021}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2F4D47C-749F-4E51-A92C-FAF01C63B021}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2F4D47C-749F-4E51-A92C-FAF01C63B021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2F4D47C-749F-4E51-A92C-FAF01C63B021}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2F4D47C-749F-4E51-A92C-FAF01C63B021}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
