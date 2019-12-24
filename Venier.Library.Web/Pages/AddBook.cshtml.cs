@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Venier.Library.Data.Models;
+using Venier.Library.Api.Services;
 
 namespace Venier.Library.Web
 {
@@ -15,7 +16,7 @@ namespace Venier.Library.Web
         public void OnGet(string isbn)
         {
             InputISBN = isbn;
-
+            var details = GetDetails(isbn).GetAwaiter().GetResult();
         }
     }
 }
