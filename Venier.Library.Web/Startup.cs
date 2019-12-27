@@ -42,6 +42,8 @@ namespace Venier.Library.Web
             services.AddScoped<IBooksGenresRepository, BooksGenresRepository>();
 
             services.AddSingleton<IBooksResponseDataServices, BooksResponseDataServices>();
+            services.AddSingleton<IBookDetailsResponseDataServices, BookDetailsResponseDataServices>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

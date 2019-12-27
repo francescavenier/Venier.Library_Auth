@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 using Venier.Library.Api.Models;
 
 namespace Venier.Library.Api.Services
 {
-    public class BookDetailsResponseDataServices
+    public class BookDetailsResponseDataServices : IBookDetailsResponseDataServices
     {
-        private static async Task<BookDetailsResponse> GetDetails(string isbn)
+        public async Task<BookDetailsResponse> GetDetails(string isbn)
         {
             var url = $"https://openlibrary.org/api/books?bibkeys=ISBN:{isbn}&jscmd=details&format=json";
 
