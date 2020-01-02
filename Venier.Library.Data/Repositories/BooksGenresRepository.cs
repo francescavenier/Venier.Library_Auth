@@ -68,6 +68,18 @@ namespace Venier.Library.Data.Repositories
             }
         }
 
+        public BookGenre GetGenre(byte genreId)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                return connection.QueryFirstOrDefault<BookGenre>(@"
+                SELECT [Id]
+                      ,[Description]
+                  FROM [dbo].[Genres]
+                WHERE Id = @Genre", new { Genre = genreId });
+            }
+        }
+
         public void Insert(BookGenre model)
         {
             using (var connection = new SqlConnection(_connectionString))

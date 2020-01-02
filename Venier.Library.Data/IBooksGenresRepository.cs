@@ -9,5 +9,7 @@ namespace Venier.Library.Data
          : IRepository<BookGenre, int>
     {
         IEnumerable<Book> GetBooksByGenre(byte genre);
+
+        BookGenre GetGenre(byte genre);
     }
 }

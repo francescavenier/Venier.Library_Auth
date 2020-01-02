@@ -13,8 +13,8 @@
                 <div class="card-info">
                     <div class="h6 mb-0  text-gray-800">@Model.Book.Description</div>
                     <br />
-                    <div class="h6 mb-0  text-gray-600">Published date: @Model.Book.PublishedDate</div>
-                    <div class="h6 mb-0  text-gray-600">Genre: @Model.Book.GenreId</div>
+                    <div class="h6 mb-0  text-gray-600">Published date: @Model.PublishedDate</div>
+                    <div class="h6 mb-0  text-gray-600">Genre: @Model.Genre.Description</div>
                     @if (Model.History == null)
                     {
                         <!--Aggiungere una tabella in cui è possibile visualizzare lo storico delle letture-->
@@ -34,7 +34,7 @@
                             }
                         </table>
                     }
-                    <div class="h6 mb-0  text-gray-600">Creation date: @Model.Book.CreationDate</div>
+                    <div class="h6 mb-0  text-gray-600">Creation date: @Model.CreationDate</div>
                 </div>
 
                 <div>
