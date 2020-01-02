@@ -29,8 +29,8 @@
                                 @foreach (var h in Model.History)
                                 {
                             <tr>
-                                <td><div class="h6 mb-0  text-gray-600">@h.ReadStart</div></td>
-                                <td><div class="h6 mb-0  text-gray-600">@h.ReadEnd</div></td>
+                                <td><div class="h6 mb-0  text-gray-600">@h.ReadStart.ToShortDateString()</div></td>
+                                <td><div class="h6 mb-0  text-gray-600">@h.ReadEnd.ToString().Substring(0,10)</div></td>
                                 @if (h.Notes != null)
                                 {
                                     <td><div class="h6 mb-0  text-gray-600">@h.Notes</div></td>
