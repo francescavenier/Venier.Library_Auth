@@ -21,14 +21,14 @@
     <div class="container">
         <div class="sidenav">
             <a class="sidebar-brand" asp-page="/Index">
-                <div >
-                <img class="sidebar-icon"src="~/img/books-stack-of-three.png" alt="Books" />
+                <div>
+                    <img class="sidebar-icon" src="~/img/books-stack-of-three.png" alt="Books" />
                 </div>
-                <h4>Library</h4>
+                <div class="h3 font-weight-bold text-uppercase mb-1">My library</div>
             </a>
             <hr class="sidebar-divider my-0">
-            <a asp-page="/Search">New book</a>
-            <a asp-page="/Privacy">Privacy</a>
+            <a asp-page="/Search"><div class="h6 mb-0 font-weight-bold text-gray-800">New book</div></a>
+            <a asp-page="/Privacy"><div class="h6 mb-0 font-weight-bold text-gray-800">Privacy</div></a>
         </div>
         <div class="main">
             @RenderBody()
