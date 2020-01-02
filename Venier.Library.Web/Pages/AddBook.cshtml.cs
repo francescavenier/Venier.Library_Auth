@@ -16,7 +16,7 @@ namespace Venier.Library.Web
         public void OnGet(string isbn)
         {
             InputISBN = isbn;
-            var details = GetDetails(isbn).GetAwaiter().GetResult();
+            /*var details = GetDetails(isbn).GetAwaiter().GetResult();*/
         }
     }
 }
