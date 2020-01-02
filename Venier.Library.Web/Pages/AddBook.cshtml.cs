@@ -11,12 +11,30 @@ namespace Venier.Library.Web
 {
     public class DetailsModel : PageModel
     {
+        private readonly IBookDetailsResponseDataServices _bookDetailsResponseDataServices;
+
+        public DetailsModel(IBookDetailsResponseDataServices bookDetailsResponseDataServices)
+        {
+            _bookDetailsResponseDataServices = bookDetailsResponseDataServices;
+        }
+
+
+
         public Book Book;
         public string InputISBN;
         public void OnGet(string isbn)
         {
             InputISBN = isbn;
-            /*var details = GetDetails(isbn).GetAwaiter().GetResult();*/
+            var details = _bookDetailsResponseDataServices.GetDetails(isbn).GetAwaiter().GetResult();
+            DateTime pubDate = DateTime.Parse("01/01/"+details.details.publish_date);
+
+            Book = new Book
+            {
+                Author = "Unknown",
+                Title = details.details.title,
+                Description = details.preview,
+                PublishedDate = pubDate
+            };
         }
     }
 }
