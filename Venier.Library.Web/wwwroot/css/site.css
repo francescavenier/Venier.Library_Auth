@@ -4,12 +4,12 @@ for details on configuring this project to bundle and minify static web assets. 
 .history-table {
     text-align: center;
     background-color: #f7f7f7;
-    width: 90%;
+    width: 95%;
     border-radius: 5px;
 }
 
 .date{
-    width:30%;
+    width:40%;
 }
 
 .card-body-text {

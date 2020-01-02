@@ -18,7 +18,7 @@
                     @if (Model.History != null)
                     {
                         <br />
-                        <div class="history-table">
+                        <i class="history-table">
                             <div class="h6 mb-0 font-weight-bold text-gray-800  text-uppercase" style="padding:5px;">Read history</div>
                             <table>
                                 <tr>
@@ -33,11 +33,11 @@
                                 <td><div class="h6 mb-0  text-gray-600">@h.ReadEnd.ToString().Substring(0,10)</div></td>
                                 @if (h.Notes != null)
                                 {
-                                    <td><div class="h6 mb-0  text-gray-600">@h.Notes</div></td>
+                                    <td><i style="font-size:small">@h.Notes</i></td>
                                 }
                                 else
                                 {
-                                    <td><i style="font-size:small">No one has left a note.</i></td>
+                                    <td><i style="font-size:small">No notes available.</i></td>
                                 }
                             </tr>
                                 }
