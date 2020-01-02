@@ -6,16 +6,15 @@
 
     <div class="card">
         <div class="card-header">
-            @Model.Book.Title
+            <div class="h6 mb-0 font-weight-bold text-gray-800">@Model.Book.Author</div>
         </div>
         <div class="card-body">
             <blockquote class="blockquote mb-0">
                 <div class="card-info">
-                    <p>@Model.Book.Description</p>
+                    <div class="h6 mb-0  text-gray-800">@Model.Book.Description</div>
                     <br />
-                    <p>Published date: @Model.Book.PublishedDate</p>
-                    <p>Genre: @Model.Book.GenreId</p>
-                    <br />
+                    <div class="h6 mb-0  text-gray-600">Published date: @Model.Book.PublishedDate</div>
+                    <div class="h6 mb-0  text-gray-600">Genre: @Model.Book.GenreId</div>
                     @if (Model.History == null)
                     {
                         <!--Aggiungere una tabella in cui è possibile visualizzare lo storico delle letture-->
@@ -35,12 +34,14 @@
                             }
                         </table>
                     }
-                    <p>Creation date: @Model.Book.CreationDate</p>
+                    <div class="h6 mb-0  text-gray-600">Creation date: @Model.Book.CreationDate</div>
                 </div>
 
                 <div>
                     <img class="card-image" src="~/img/abierto-blanco-y-negro-libro-novela-821139.jpg" alt="Open book" />
                 </div>
+
+                <hr />
                 <footer class="blockquote-footer">Autore <cite title="Source Title">@Model.Book.Author</cite></footer>
             </blockquote>
         </div>
