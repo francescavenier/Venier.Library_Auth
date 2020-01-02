@@ -15,14 +15,16 @@
                     <br />
                     <div class="h6 mb-0  text-gray-600">Published date: @Model.PublishedDate</div>
                     <div class="h6 mb-0  text-gray-600">Genre: @Model.Genre.Description</div>
-                    @if (Model.History == null)
+                    @if (Model.History != null)
                     {
+                        <br />
+                        <div class="h6 mb-0 font-weight-bold text-gray-800  text-uppercase">Read history</div>
                         <!--Aggiungere una tabella in cui è possibile visualizzare lo storico delle letture-->
                         <table>
                             <tr>
-                                <th>Start </th>
-                                <th>End</th>
-                                <th>Note</th>
+                                <th><div class="h6 mb-0 font-weight-bold text-gray-800">Starting date</div></th>
+                                <th><div class="h6 mb-0 font-weight-bold text-gray-800">Ending date</div></th>
+                                <th><div class="h6 mb-0 font-weight-bold text-gray-800">Note</div></th>
                             </tr>
                             @foreach (var h in Model.History)
                             {
@@ -41,7 +43,6 @@
                     <img class="card-image" src="~/img/abierto-blanco-y-negro-libro-novela-821139.jpg" alt="Open book" />
                 </div>
 
-                <hr />
                 <footer class="blockquote-footer">Autore <cite title="Source Title">@Model.Book.Author</cite></footer>
             </blockquote>
         </div>
