@@ -14,9 +14,14 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="h3 font-weight-bold text-primary text-uppercase mb-1">@book.Title</div>
-                            <div class="h6 mb-0 font-weight-bold text-gray-800">@book.Author</div>
-                            <div class="h6 mb-0  text-gray-800">@book.Description.Substring(0, 150)..</div>
+                            <div class="card-body-title">
+                                <div class="h3 font-weight-bold text-primary text-uppercase mb-1">@book.Title</div>
+                            </div>
+                            <hr />
+                            <div class="card-body-text">
+                                <div class="h6 mb-0 font-weight-bold text-gray-800">@book.Author</div>
+                                <div class="h6 mb-0  text-gray-800">@book.Description.Substring(0, 150)..</div>
+                            </div>
                             <br /><br />
                                   <div class="btn-box">
                                       <div class="fakebtn">
