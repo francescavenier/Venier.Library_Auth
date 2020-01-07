@@ -24,21 +24,19 @@
                             </div>
                             <br /><br />
                                   <div class="btn-box">
-                                      <div class="fakebtn">
-                                          <a asp-page="/Books/Details" asp-route-id="@book.Id">Details</a>
-                                      </div>
+                                      <button type="button" class="btn btn-primary btt">
+                                          <a style="color:white;" asp-page="/Books/Details" asp-route-id="@book.Id">Details</a>
+                                      </button>
                                       @if (User.Identity.IsAuthenticated)
                                       {
-                                          <div class="fakebtn">
-                                              <a asp-page="Books/Edit" asp-route-id="@book.Id">Edit</a>
-                                          </div>
-                                          <div class="fakebtn" style="background-color:black">
-                                              <a asp-page="Books/Delete" asp-route-id="@book.Id">Delete</a>
-                                          </div>
-
+                                          <button type="button" class="btn btn-primary btt">
+                                              <a style="color:white;" asp-page="/Books/Edit" asp-route-id="@book.Id">Edit book</a>
+                                          </button>
+                                          <button type="button" class="btn btn-dark btt">
+                                              <a style="color:white;" asp-page="/Books/Delete" asp-route-id="@book.Id">Delete</a>
+                                          </button>
                                       }
                                   </div>
-
                         </div>
                     </div>
 
