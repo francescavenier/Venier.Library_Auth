@@ -8,38 +8,46 @@
 <form method="post">
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label>Title</label>
-            <input type="text" class="form-control" placeholder="@Model.Book.Title">
+            <label asp-for="editBook.Title"></label>
+            <input type="text" class="form-control" asp-for="editBook.Title">
+            <span class="text-danger" asp-validation-for="editBook.Title"></span>
         </div>
         <div class="form-group col-md-6">
-            <label>Author</label>
-            <input type="text" class="form-control" placeholder="@Model.Book.Author">
+            <label asp-for="editBook.Author"></label>
+            <input type="text" class="form-control" asp-for="editBook.Author">
+            <span class="text-danger" asp-validation-for="editBook.Author"></span>
         </div>
     </div>
     <div class="form-group">
-        <label>Description</label>
-        <input type="text" class="form-control" placeholder="@Model.Book.Description">
+        <label asp-for="editBook.Description"></label>
+        <input type="text" class="form-control" asp-for="editBook.Description">
+        <span class="text-danger" asp-validation-for="editBook.Description"></span>
     </div>
-        <div class="it-datepicker-wrapper theme-dark">
-            <div class="form-group">
-                <label for="date2">Creation date</label>
-                <input class="form-control it-date-datepicker" type="text" placeholder="@Model.Book.CreationDate">
-            </div>
+    <div class="it-datepicker-wrapper theme-dark">
+        <div class="form-group">
+            <label asp-for="editBook.CreationDate"></label>
+            <input type="text" class="form-control" asp-for="editBook.CreationDate">
+            <span class="text-danger" asp-validation-for="editBook.CreationDate"></span>
         </div>
-        <div class="it-datepicker-wrapper theme-dark">
-            <div class="form-group">
-                <label for="date2">Published date</label>
-                <input class="form-control it-date-datepicker" type="text" placeholder="@Model.Book.PublishedDate">
-            </div>
+    </div>
+    <div class="it-datepicker-wrapper theme-dark">
+        <div class="form-group">
+            <label asp-for="editBook.PublishedDate"></label>
+            <input type="text" class="form-control" asp-for="editBook.PublishedDate">
+            <span class="text-danger" asp-validation-for="editBook.PublishedDate"></span>
         </div>
+    </div>
     <div class="form-group">
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-                Check if you have already read it!
-            </label>
+            <input class="form-check-input" type="checkbox" asp-for="editBook.IsRead">
+            <label class="form-check-label" asp-for="editBook.IsRead"></label>
+            <span class="text-danger" asp-validation-for="editBook.IsRead"></span>
         </div>
     </div>
     <button type="submit" class="btn btn-primary" style="float:right;">Edit</button>
 </form>
 
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
