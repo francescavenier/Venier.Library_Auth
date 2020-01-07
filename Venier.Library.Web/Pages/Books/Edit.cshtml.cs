@@ -92,7 +92,7 @@ namespace Venier.Library.Web
                 _booksRepository.Update(Book);
                 return RedirectToPage("/Index"); // da modificare il redirect
             }
-            return Page();
+            return RedirectToPage("/error404");
         }
     }
 }
