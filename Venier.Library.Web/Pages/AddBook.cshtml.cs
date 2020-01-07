@@ -6,35 +6,46 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Venier.Library.Data.Models;
 using Venier.Library.Api.Services;
+using Venier.Library.Api.Models;
+using Venier.Library.Data;
 
 namespace Venier.Library.Web
 {
     public class DetailsModel : PageModel
     {
         private readonly IBookDetailsResponseDataServices _bookDetailsResponseDataServices;
+        private readonly IBooksRepository _bookRepository;
 
-        public DetailsModel(IBookDetailsResponseDataServices bookDetailsResponseDataServices)
+        public DetailsModel(IBookDetailsResponseDataServices bookDetailsResponseDataServices, IBooksRepository booksRepository)
         {
             _bookDetailsResponseDataServices = bookDetailsResponseDataServices;
+            _bookRepository = booksRepository;
         }
-
-
 
         public Book Book;
         public string InputISBN;
+        public string Info_url;
+
         public void OnGet(string isbn)
         {
             InputISBN = isbn;
             var details = _bookDetailsResponseDataServices.GetDetails(isbn).GetAwaiter().GetResult();
-            DateTime pubDate = DateTime.Parse("01/01/"+details.details.publish_date);
+            Info_url = details.info_url;
+            var description = "Description is not available.";
+            string author = (details.details.authors[0].name == null ? "Unknown" : details.details.authors[0].name);
 
             Book = new Book
             {
-                Author = "Unknown",
                 Title = details.details.title,
-                Description = details.preview,
-                PublishedDate = pubDate
+                Author = author,
+                Description = description,
+                CreationDate = DateTime.Now
             };
+
+            _bookRepository.Insert(Book);
+
         }
     }
 }
+
+/*the adventure of tom sawyer*/
