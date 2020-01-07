@@ -31,7 +31,7 @@ namespace Venier.Library.Web
             InputISBN = isbn;
             var details = _bookDetailsResponseDataServices.GetDetails(isbn).GetAwaiter().GetResult();
             Info_url = details.info_url;
-            var description = "Description is not available.";
+            var description = "Unfortunately the description of this book is not available.";
             string author = (details.details.authors[0].name == null ? "Unknown" : details.details.authors[0].name);
 
             Book = new Book
