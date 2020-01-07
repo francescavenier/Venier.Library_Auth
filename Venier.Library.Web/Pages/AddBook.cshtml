@@ -5,9 +5,10 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>@Model.Book.Title</h1>
-<div class="card mb-3">
-    <img src="..." class="card-img-top" alt="...">
+<div class="card mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">@Model.Book.Title</h6>
+    </div>
     <div class="card-body">
         <p class="card-text">The selected book has been successfully added to your library!</p>
         <p class="card-body-text">Please remember to fill in its book card.</p>
