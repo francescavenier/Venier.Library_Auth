@@ -33,13 +33,15 @@ namespace Venier.Library.Web.Pages.Books
         public void OnGet(int id)
         {
             Book = _booksRepository.Get(id);
-            DateTime PubDate = (DateTime)Book.PublishedDate;
+            DateTime PubDate = ((Book.PublishedDate != null) ? (DateTime)Book.PublishedDate : DateTime.MinValue);
             PublishedDate = PubDate.Date.ToString("dd MMM yyyy", CultureInfo.CreateSpecificCulture("en-US"));
             DateTime CreDate = Book.CreationDate;
             CreationDate = CreDate.Date.ToString("dd MMM yyyy", CultureInfo.CreateSpecificCulture("en-US"));
-
-            byte Id = (byte)Book.GenreId;
-            Genre = _booksGenresRepository.GetGenre(Id);
+            if (Book.GenreId != null)
+            {
+                byte Id = (byte)Book.GenreId;
+                Genre = _booksGenresRepository.GetGenre(Id);
+            }
            
             History = _bookReadHistoriesRepository.GetByBook(id);
         }

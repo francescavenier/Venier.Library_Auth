@@ -14,7 +14,10 @@
                     <div class="h6 mb-0  text-gray-800">@Model.Book.Description</div>
                     <br />
                     <div class="h6 mb-0  text-gray-600">Published date: @Model.PublishedDate</div>
-                    <div class="h6 mb-0  text-gray-600">Genre: @Model.Genre.Description</div>
+                    @if (Model.Book.GenreId != null)
+                    {
+                        <div class="h6 mb-0  text-gray-600">Genre: @Model.Genre.Description</div>
+                    }
                     @if (Model.History != null)
                     {
                         <br />
