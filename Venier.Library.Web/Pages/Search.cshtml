@@ -2,6 +2,7 @@
 @model Venier.Library.Web.SearchModel
 @{
     ViewData["Title"] = "Search";
+    string ShortTitle = "";
 }
 <form method="post">
     <div class="form-group">
@@ -17,15 +18,27 @@
     {
         var isbn = b.isbn?.FirstOrDefault();
 
-       <div  class="card" style="width: 20rem; height: 10rem; float:left; margin: 10px;">
-           <div class="card-body">
-               <h5 class="card-title">@b.title</h5>
-               <p class="card-text">@b.first_publish_year<br /> ISBN: @isbn</p>
-               <div class="h6 mb-0 font-weight-bold text-gray-800">
-                   <a asp-page="/AddBook" asp-route-isbn="@isbn">Aggiungi</a>
-               </div>
-           </div>
-       </div>
+        ShortTitle = b.title.Length > 50 ? b.title.Substring(0, 50): b.title;
+        if(ShortTitle.Length==50)
+        { ShortTitle = ShortTitle + ".."; }
+
+        <div class="col-xl-3 col-md-6 mb-4" style="float:left; height:200px;">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">ISBN: @isbn</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@ShortTitle</div>
+                        </div>
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-primary btt">
+                                <a style="color:white;" asp-page="/Addbook" asp-route-isbn="@isbn">Add book</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
 </div>
 

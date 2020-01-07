@@ -20,7 +20,6 @@ namespace Venier.Library.Web
             Books = books;
             _bookResponseDataService = bookResponseDataService;
         }
-
         public async Task OnPost()
         {
             string text = Request.Form["testo"];
