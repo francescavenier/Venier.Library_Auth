@@ -43,7 +43,7 @@
             @if (User.Identity.IsAuthenticated)
             {
                 <li class="nav-item">
-                    <a asp-page="/Search" class="nav-link" href="index.html">
+                    <a asp-page="/Search" class="nav-link">
                         <i class="fas fa-fw fa-cog"></i>
                         <span>New Book</span>
                     </a>
@@ -51,7 +51,7 @@
             }
                 <!-- Nav Item - Privacy -->
                 <li class="nav-item">
-                    <a asp-page="/Privacy" class="nav-link" href="index.html">
+                    <a asp-page="/Privacy" class="nav-link">
                         <i class="fas fa-fw fa-wrench"></i>
                         <span>Privacy</span>
                     </a>
@@ -75,7 +75,7 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <partial name="_LoginPartial" />
-                        <div class="topbar-divider d-none d-sm-block"></div>
+ 
 
 
                     </ul>
