@@ -29,6 +29,8 @@ namespace Venier.Library.Web
 
         public class EditBook
         {
+            public int Id { get; set; }
+
             [Display(Name = "Title")]
             [Required]
             public string Title { get; set; }
@@ -59,6 +61,7 @@ namespace Venier.Library.Web
         {
             Book = _booksRepository.Get(id);
             this.editBook = new EditBook {
+                Id = id,
                 Author = Book.Author,
                 Title = Book.Title,
                 Description = Book.Description,
@@ -75,6 +78,7 @@ namespace Venier.Library.Web
             if (ModelState.IsValid)
             {
                 Book = new Book { 
+                    Id = editBook.Id,
                     Author = editBook.Author,
                     Title = editBook.Title,
                     Description = editBook.Description,
@@ -82,8 +86,9 @@ namespace Venier.Library.Web
                     GenreId = editBook.GenreId,
                     PublishedDate = editBook.PublishedDate,
                     IsRead = editBook.IsRead,
-                    DateLastUpdate = DateTime.Now };
-                //Book.DateLastUpdate = DateTime.Now;
+                    DateLastUpdate = DateTime.Now 
+                };
+
                 _booksRepository.Update(Book);
                 return RedirectToPage("/Index"); // da modificare il redirect
             }
