@@ -49,14 +49,14 @@
                     </a>
                 </li>
             }
-                <!-- Nav Item - Privacy -->
-                <li class="nav-item">
-                    <a asp-page="/Privacy" class="nav-link">
-                        <i class="fas fa-fw fa-wrench"></i>
-                        <span>Privacy</span>
-                    </a>
-                </li>
-            </ul>
+            <!-- Nav Item - Privacy -->
+            <li class="nav-item">
+                <a asp-page="/Privacy" class="nav-link">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Privacy</span>
+                </a>
+            </li>
+        </ul>
         <!-- End of Sidebar -->
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -75,14 +75,13 @@
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <partial name="_LoginPartial" />
- 
+
 
 
                     </ul>
 
                 </nav>
                 <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -143,7 +142,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
+    @RenderSection("Scripts", required: false)
 </body>
 
 </html>
