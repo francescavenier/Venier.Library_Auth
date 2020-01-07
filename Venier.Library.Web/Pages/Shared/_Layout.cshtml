@@ -27,9 +27,12 @@
                 <div class="h3 font-weight-bold text-uppercase mb-1">My library</div>
             </a>
             <hr class="sidebar-divider my-0">
-            <a asp-page="/Search"><div class="h6 mb-0 font-weight-bold text-gray-800">New book</div></a>
-            <a asp-page="/Privacy"><div class="h6 mb-0 font-weight-bold text-gray-800">Privacy</div></a>
-        </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a asp-page="/Search"><div class="h6 mb-0 font-weight-bold text-gray-800">New book</div></a>
+            }
+                <a asp-page="/Privacy"><div class="h6 mb-0 font-weight-bold text-gray-800">Privacy</div></a>
+            </div>
         <div class="main">
             @RenderBody()
         </div>
