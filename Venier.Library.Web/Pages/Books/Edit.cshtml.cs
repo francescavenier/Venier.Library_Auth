@@ -60,6 +60,7 @@ namespace Venier.Library.Web
         public void OnGet(int id)
         {
             Book = _booksRepository.Get(id);
+            
             this.editBook = new EditBook {
                 Id = id,
                 Author = Book.Author,
@@ -77,8 +78,9 @@ namespace Venier.Library.Web
         {
             if (ModelState.IsValid)
             {
+                
                 Book = new Book { 
-                    Id = editBook.Id,
+                    Id = id,
                     Author = editBook.Author,
                     Title = editBook.Title,
                     Description = editBook.Description,
