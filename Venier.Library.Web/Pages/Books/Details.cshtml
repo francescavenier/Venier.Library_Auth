@@ -4,59 +4,61 @@
     ViewData["Title"] = "Details";
 }
 
-    <div class="card">
-        <div class="card-header">
-            <div class="h6 mb-0 font-weight-bold text-gray-800">@Model.Book.Author</div>
+    <div class="card mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">@Model.Book.Title</h6>
         </div>
         <div class="card-body">
-            <blockquote class="blockquote mb-0">
-                <div class="card-info">
-                    <div class="h6 mb-0  text-gray-800">@Model.Book.Description</div>
+            <div class="card-info">
+                <div style="width:80%; float:left;">
+                    <div class="h6 mb-0  text-gray-800">Author: @Model.Book.Author</div>
                     <br />
-                    <div class="h6 mb-0  text-gray-600">Published date: @Model.PublishedDate</div>
-                    @if (Model.Book.GenreId != null)
-                    {
-                        <div class="h6 mb-0  text-gray-600">Genre: @Model.Genre.Description</div>
-                    }
-                    @if (Model.History != null)
-                    {
-                        <br />
-                        <div class="history-table">
-                            <div class="h6 mb-0 font-weight-bold text-gray-800  text-uppercase" style="padding:5px;">Read history</div>
-                            <table>
-                                <tr>
-                                    <th class="date"><div class="h6 mb-0 font-weight-bold text-gray-800">Starting date</div></th>
-                                    <th class="date"><div class="h6 mb-0 font-weight-bold text-gray-800">Ending date</div></th>
-                                    <th><div class="h6 mb-0 font-weight-bold text-gray-800">Note</div></th>
-                                </tr>
-                                @foreach (var h in Model.History)
-                                {
-                            <tr>
-                                <td><div class="h6 mb-0  text-gray-600">@h.ReadStart.ToShortDateString()</div></td>
-                                <td><div class="h6 mb-0  text-gray-600">@h.ReadEnd.ToString().Substring(0,10)</div></td>
-                                @if (h.Notes != null)
-                                {
-                                    <td><i style="font-size:small">@h.Notes</i></td>
-                                }
-                                else
-                                {
-                                    <td><i style="font-size:small">No notes available.</i></td>
-                                }
-                            </tr>
-                                }
+                    <div class="h6 mb-0  text-gray-800">@Model.Book.Description</div>
+                </div>
+                <div style="width:20%; float:right;">
+                    <img src="~/img/abierto-blanco-y-negro-libro-novela-821139.jpg" class="rounded float-right" style="width:200px;height:200px;" alt="Book">
+                </div>
+                <div class="h6 mb-0  text-gray-600">Published date: @Model.PublishedDate</div>
+                @if (Model.Book.GenreId != null)
+                {
+                    <div class="h6 mb-0  text-gray-600">Genre: @Model.Genre.Description</div>
+                }
+                @if (Model.History != null)
+                {
+                    <br />
+                    <div>
+                        <div class="h6 mb-0 font-weight-bold text-gray-800  text-uppercase" style="padding:5px;">Read history</div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th><div class="h6 mb-0 font-weight-bold text-gray-800">Starting date</div></th>
+                                        <th><div class="h6 mb-0 font-weight-bold text-gray-800">Ending date</div></th>
+                                        <th><div class="h6 mb-0 font-weight-bold text-gray-800">Note</div></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var h in Model.History)
+                                    {
+                                        <tr>
+                                            <td><div class="h6 mb-0  text-gray-600">@h.ReadStart.ToShortDateString()</div></td>
+                                            <td><div class="h6 mb-0  text-gray-600">@h.ReadEnd.ToString().Substring(0, 10)</div></td>
+                                            @if (h.Notes != null)
+                                            {
+                                                <td><i style="font-size:small">@h.Notes</i></td>
+                                            }
+                                            else
+                                            {
+                                                <td><i style="font-size:small">No notes available.</i></td>
+                                            }
+                                        </tr>
+                                    }
+                                </tbody>
                             </table>
                         </div>
-                    }
-                    <div class="h6 mb-0  text-gray-600">Creation date: @Model.CreationDate</div>
-                </div>
+                    </div>
+                }
+                <div class="h6 mb-0  text-gray-600">Creation date: @Model.CreationDate</div>
+            </div>
 
-                <div>
-                    <img class="card-image" src="~/img/abierto-blanco-y-negro-libro-novela-821139.jpg" alt="Open book" />
-                </div>
-
-                <footer class="blockquote-footer">Autore <cite title="Source Title">@Model.Book.Author</cite></footer>
-            </blockquote>
         </div>
-    </div>
-
-
